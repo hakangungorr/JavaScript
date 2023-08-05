@@ -1,0 +1,39 @@
+body{
+  background-color: black;
+  padding-left: 0 ;
+}
+
+.number{
+  background-color: rgb(58, 57, 57);
+  color: white;
+  border-style: none;
+  border-radius: 50px;
+  height: 60px;
+  width: 60px;
+  margin-left: 5px;
+  font-size: 25px;
+}
+
+.clearnumber{
+  background-color: rgb(58, 57, 57);
+  color: white;
+  border-style: none;
+  border-radius: 50px;
+  height: 60px;
+  width: 60px;
+  margin-left: 5px;
+  font-size: 17px;
+
+}
+
+.process{
+  background-color: rgb(254, 160, 10);
+  color: white;
+  border-style: none;
+  border-radius: 50px;
+  height: 60px;
+  width: 60px;
+  margin-left: 5px;
+  font-size: 25px;
+
+}
