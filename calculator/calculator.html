@@ -4,32 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
-    <link rel="stylesheet" href="calculator.css">
+    <link rel="stylesheet" href="calculator.css" />
   </head>
   <body>
     <p>
-      <button class="number" , 
+      <button
+        class="number"
+        ,
         onclick="
   calculation +='1'
   console.log(calculation);
   ">
         1
       </button>
-      <button class="number" , 
+      <button
+        class="number"
+        ,
         onclick="
   calculation +='2'
   console.log(calculation);
   ">
         2
       </button>
-      <button class="number" , 
+      <button
+        class="number"
+        ,
         onclick="
   calculation +='3'
   console.log(calculation);
   ">
         3
       </button>
-      <button class="process" ,
+      <button
+        class="process"
+        ,
         onclick="
   calculation +=' + '
   ">
@@ -38,21 +46,27 @@
     </p>
 
     <p>
-      <button class="number" , 
+      <button
+        class="number"
+        ,
         onclick="
   calculation +='4' ;
   console.log(calculation);
   ">
         4
       </button>
-      <button class="number" , 
+      <button
+        class="number"
+        ,
         onclick="
   calculation +='5'
   console.log(calculation);
   ">
         5
       </button>
-      <button class="number" , 
+      <button
+        class="number"
+        ,
         onclick="
   calculation +='6'
   console.log(calculation);
@@ -60,7 +74,9 @@
         6
       </button>
 
-      <button class="process" , 
+      <button
+        class="process"
+        ,
         onclick="
     calculation +=' - '
     ">
@@ -68,23 +84,28 @@
       </button>
     </p>
 
-
     <p>
-      <button class="number" ,
+      <button
+        class="number"
+        ,
         onclick=" 
   calculation +='7' ;
   console.log(calculation);
   ">
         7
       </button>
-      <button class="number" , 
+      <button
+        class="number"
+        ,
         onclick="
   calculation +='8'
   console.log(calculation);
   ">
         8
       </button>
-      <button class="number" , 
+      <button
+        class="number"
+        ,
         onclick=" 
   calculation +='9'
   console.log(calculation);
@@ -92,7 +113,9 @@
         9
       </button>
 
-      <button class="process" ,
+      <button
+        class="process"
+        ,
         onclick="
     calculation +=' * '
     ">
@@ -101,29 +124,37 @@
     </p>
 
     <p>
-      <button class="number" , 
+      <button
+        class="number"
+        ,
         onclick="
   calculation +='0' ;
   console.log(calculation);
   ">
         0
       </button>
-      <button class="number" , 
+      <button
+        class="number"
+        ,
         onclick="
   calculation +='.'
   console.log(calculation);
   ">
         .
       </button>
-      <button class="number" , 
-      onclick="
+      <button
+        class="number"
+        ,
+        onclick="
     calculation = eval(calculation);
     console.log(calculation);
     ">
-      =
-    </button>
+        =
+      </button>
 
-      <button class="process" ,
+      <button
+        class="process"
+        ,
         onclick="
     calculation +=' / '
     ">
@@ -131,15 +162,17 @@
       </button>
     </p>
 
-    <button class="clearnumber" , onclick="
+    <button
+      class="clearnumber"
+      ,
+      onclick="
   calculation=''
   console.log(`Cleared`);
   
-  ">Clear</button>
+  ">
+      Clear
+    </button>
 
-    
-
-    
     <script>
       let calculation = '';
     </script>
