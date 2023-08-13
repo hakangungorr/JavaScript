@@ -39,7 +39,7 @@
         class="process"
         ,
         onclick="
-  calculation +=' + '
+  updateCalculation('+')
   ">
         +
       </button>
@@ -78,7 +78,7 @@
         class="process"
         ,
         onclick="
-    calculation +=' - '
+      updateCalculation('-')
     ">
         -
       </button>
@@ -117,7 +117,7 @@
         class="process"
         ,
         onclick="
-    calculation +=' * '
+    updateCalculation('*')
     ">
         *
       </button>
@@ -126,7 +126,6 @@
     <p>
       <button
         class="number"
-        
         onclick="
   calculation +='0' ;
   console.log(calculation);
@@ -156,7 +155,8 @@
         class="process"
         ,
         onclick="
-    calculation +=' / '
+        updateCalculation('/')
+    
     ">
         /
       </button>
@@ -175,6 +175,10 @@
 
     <script>
       let calculation = '';
+      function updateCalculation(value) {
+        calculation += value;
+        console.log(calculation);
+      }
     </script>
   </body>
 </html>
