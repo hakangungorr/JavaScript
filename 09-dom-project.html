@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom Project</title>
+</head>
+<body>
+
+  <p>Youtube Subscribe Button</p>
+  <button class= "Js-subs"onclick="
+  subscribe();
+
+
+  ">Subscribe</button>
+  <p>Rock Paper Scissors</p>
+  <a href = "08-rps.html">Click here</a>
+  <p>Amazon Shipping Calculator</p>
+  <p>Orders under $40= +$10 shipping. </p>
+  <p>Orders over $40 = Free shipping</p>
+  <input class="cost" placeholder="Cost of order" onkeydown="
+handleCostKeydown(event)">
+  <button  class="calculationButtom", onclick="
+  costResult();  
+  
+  
+
+  
+  ">Calculate</button>
+  <p class="calculationResult"></p>
+  <script>
+
+    function handleCostKeydown(event){
+      if (event.key ==='Enter'){
+        costResult();
+
+      }
+    }
+
+
+
+
+    function subscribe() {
+      const buttonElement = document.querySelector('.Js-subs')
+
+  if (buttonElement.innerText === 'Subscribe'){    /* .innerText sadece buttondaki texte odaklanır */
+    buttonElement.innerHTML = 'Subscribed';
+
+  }else{
+    buttonElement.innerHTML = 'Subscribe';
+  }
+
+    }
+
+function costResult(){
+  const inputElement = document.querySelector('.cost');
+  let cost = Number(inputElement.value) ;
+  if ( cost < 40 ){
+    cost += 10;
+
+  }
+
+  document.querySelector('.calculationResult').innerHTML = `$${cost}`;
+  
+
+
+}
+
+  </script>
+
+  
+</body>
+</html>
