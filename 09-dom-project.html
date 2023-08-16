@@ -31,6 +31,7 @@ handleCostKeydown(event)">
   <script>
 
     function handleCostKeydown(event){
+      console.log(event.keyCode)
       if (event.key ==='Enter'){
         costResult();
 
@@ -54,7 +55,8 @@ handleCostKeydown(event)">
 
 function costResult(){
   const inputElement = document.querySelector('.cost');
-  let cost = Number(inputElement.value * 100) ;
+  let cost =Number(inputElement.value*100 ) ;
+  console.log(typeof cost )
   if ( cost < 4000 ){
     cost += 1000;
 

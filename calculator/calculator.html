@@ -6,14 +6,14 @@
     <title>Calculator</title>
     <link rel="stylesheet" href="calculator.css" />
   </head>
-  <body>
+  <body onkeydown="handleCostKeydown(event)">
     <p class="js-calculation"></p>
     <p>
       <button
         class="number"
         ,
         onclick="
-  updateCalculation('1');
+  updateCalculation(1);
   ">
         1
       </button>
@@ -21,7 +21,7 @@
         class="number"
         ,
         onclick="
-  updateCalculation('2');
+  updateCalculation(2);
   ">
         2
       </button>
@@ -29,7 +29,7 @@
         class="number"
         ,
         onclick="
-  updateCalculation('3');
+  updateCalculation(3);
   ">
         3
       </button>
@@ -48,7 +48,7 @@
         class="number"
         ,
         onclick="
-  updateCalculation('4');
+  updateCalculation(4);
   ">
         4
       </button>
@@ -56,7 +56,7 @@
         class="number"
         ,
         onclick="
-  updateCalculation('5');
+  updateCalculation(5);
   ">
         5
       </button>
@@ -64,7 +64,7 @@
         class="number"
         ,
         onclick="
-  updateCalculation('6');
+  updateCalculation(6);
   ">
         6
       </button>
@@ -84,7 +84,7 @@
         class="number"
         ,
         onclick=" 
-      updateCalculation('7')
+      updateCalculation(7)
   ">
         7
       </button>
@@ -92,7 +92,7 @@
         class="number"
         ,
         onclick="
-    updateCalculation('8')
+    updateCalculation(8)
   ">
         8
       </button>
@@ -100,7 +100,7 @@
         class="number"
         ,
         onclick=" 
-  updateCalculation('9')
+  updateCalculation(9)
   ">
         9
       </button>
@@ -119,7 +119,7 @@
       <button
         class="number"
         onclick="
-  updateCalculation('0')
+  updateCalculation(0)
   ">
         0
       </button>
@@ -127,8 +127,7 @@
         class="number"
         ,
         onclick="
-  calculation +='.'
-  console.log(calculation);
+  updateCalculation('.')
   ">
         .
       </button>
@@ -167,6 +166,7 @@
     calculation=''
     showCalculation()
     localStorage.setItem('calculation' , calculation);
+    
 
     
   ">
@@ -174,27 +174,41 @@
     </button>
 
     <script>
-
-
-     
+      let calculation = localStorage.getItem('calculation') || '';
       
-  let calculation = localStorage.getItem('calculation') || '';
-
       showCalculation();
 
+      function handleCostKeydown(event) {
+        const key = event.key;
+
+        if (/[0-9+\-*/.]/.test(key)) {
+          updateCalculation(key);
+        }
+        if (key === '=' || key === 'Enter') {
+          calculation = eval(calculation);
+          
+          showCalculation();
+          localStorage.setItem('calculation', calculation);
+        } else if (key === 'Backspace' || key === 'Delete') {
+          calculation = ' ';
+          showCalculation();
+          localStorage.setItem('calculation', calculation);
+        }
+      }
+
       function updateCalculation(value) {
-        calculation += value;  
+        calculation += value;
         
+
         showCalculation();
 
         localStorage.setItem('calculation', calculation);
       }
 
-      function showCalculation(){
+      function showCalculation() {
         const result = document.querySelector('.js-calculation');
-        result.innerHTML = calculation 
+        result.innerHTML = calculation;
       }
-    
     </script>
   </body>
 </html>
