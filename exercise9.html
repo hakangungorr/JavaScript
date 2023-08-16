@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise9</title>
+</head>
+<body>
+  <button class="first" onclick = "
+    document.querySelector('.js-choice').innerHTML = 'You chose Heads'
+    
+    
+    ">Heads</button>
+  <button class="second" onclick = "
+  document.querySelector('.js-choice').innerHTML = 'You chose Tails'
+  ">Tails</button>
+
+  <p class ='js-choice'></p>
+
+
+  <input class="name" onkeydown="
+  pressEnter(event)">
+  <button class="submitButton" onclick="
+  getName();">Submit</button>
+  <p class="showName"></p>
+
+<input class="active-result" onkeyup="
+const activeResult = document.querySelector('.active-result').value;
+document.querySelector('.randomMessage').innerHTML = `${activeResult}`;
+
+
+" placeholder="Type something">
+
+<p class="randomMessage"></p>
+
+
+  <script>
+    function getName(){
+      const  name = document.querySelector('.name').value
+      document.querySelector('.showName').innerHTML = `Your name is: ${name}`
+    }
+
+    function pressEnter(event){
+      if (event.key==='Enter'){
+        getName();
+
+    }
+  }
+
+
+
+
+
+    
+  
+
+  </script>
+  
+</body>
+</html>

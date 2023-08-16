@@ -8,7 +8,7 @@
   <body>
     <button
       onclick="
-    updateCartQuantity(0)
+    displayQuantity();
     ">
       Show Quantity
     </button>
@@ -87,13 +87,17 @@ updateCartQuantity(-1)
     <button
       onclick="
   cartQuantity= 0;
-  console.log('Cart was reset.');
-  console.log(`cart quantity: ${cartQuantity}`);">
+  updateCartQuantity(0);
+  ">
       Reset Cart
     </button>
 
+    <p class="js-quantity"></p>
+
     <script>
+      
       let cartQuantity = 0;
+      displayQuantity(); //display quantity when page loads
       function updateCartQuantity(value) {
         if (cartQuantity + value > 10) {
           alert('full');
@@ -104,8 +108,17 @@ updateCartQuantity(-1)
           return
         }
         cartQuantity += value;
-        console.log(`Cart quantity: ${cartQuantity}`);
+
+        displayQuantity();
+        
+        
       }
+      
+      function displayQuantity(){
+        document.querySelector('.js-quantity').innerHTML = `Cart Quantity: ${cartQuantity}`;
+
+      }
+
     </script>
   </body>
 </html>

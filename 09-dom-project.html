@@ -54,13 +54,13 @@ handleCostKeydown(event)">
 
 function costResult(){
   const inputElement = document.querySelector('.cost');
-  let cost = Number(inputElement.value) ;
-  if ( cost < 40 ){
-    cost += 10;
+  let cost = Number(inputElement.value * 100) ;
+  if ( cost < 4000 ){
+    cost += 1000;
 
   }
 
-  document.querySelector('.calculationResult').innerHTML = `$${cost}`;
+  document.querySelector('.calculationResult').innerHTML = `$${cost/100}`;
   
 
 

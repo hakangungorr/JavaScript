@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="calculator.css" />
   </head>
   <body>
+    <p class="js-calculation"></p>
     <p>
       <button
         class="number"
         ,
         onclick="
-  calculation +='1'
-  console.log(calculation);
+  updateCalculation('1');
   ">
         1
       </button>
@@ -21,8 +21,7 @@
         class="number"
         ,
         onclick="
-  calculation +='2'
-  console.log(calculation);
+  updateCalculation('2');
   ">
         2
       </button>
@@ -30,8 +29,7 @@
         class="number"
         ,
         onclick="
-  calculation +='3'
-  console.log(calculation);
+  updateCalculation('3');
   ">
         3
       </button>
@@ -50,8 +48,7 @@
         class="number"
         ,
         onclick="
-  calculation +='4' ;
-  console.log(calculation);
+  updateCalculation('4');
   ">
         4
       </button>
@@ -59,8 +56,7 @@
         class="number"
         ,
         onclick="
-  calculation +='5'
-  console.log(calculation);
+  updateCalculation('5');
   ">
         5
       </button>
@@ -68,8 +64,7 @@
         class="number"
         ,
         onclick="
-  calculation +='6'
-  console.log(calculation);
+  updateCalculation('6');
   ">
         6
       </button>
@@ -89,8 +84,7 @@
         class="number"
         ,
         onclick=" 
-  calculation +='7' ;
-  console.log(calculation);
+      updateCalculation('7')
   ">
         7
       </button>
@@ -98,8 +92,7 @@
         class="number"
         ,
         onclick="
-  calculation +='8'
-  console.log(calculation);
+    updateCalculation('8')
   ">
         8
       </button>
@@ -107,8 +100,7 @@
         class="number"
         ,
         onclick=" 
-  calculation +='9'
-  console.log(calculation);
+  updateCalculation('9')
   ">
         9
       </button>
@@ -127,8 +119,7 @@
       <button
         class="number"
         onclick="
-  calculation +='0' ;
-  console.log(calculation);
+  updateCalculation('0')
   ">
         0
       </button>
@@ -146,8 +137,8 @@
         ,
         onclick="
     calculation = eval(calculation);
-    console.log(calculation);
-    localStorage.removeItem('calculation');
+    showCalculation();
+    localStorage.setItem('calculation' , calculation);
     
     
     
@@ -174,8 +165,8 @@
       ,
       onclick="
     calculation=''
-    console.log(`${calculation}`);
-    localStorage.removeItem('calculation');
+    showCalculation()
+    localStorage.setItem('calculation' , calculation);
 
     
   ">
@@ -185,16 +176,25 @@
     <script>
 
 
-      let calculation = JSON.parse(localStorage.getItem('calculation')) || ' ';
-      console.log(calculation);
+     
+      
+  let calculation = localStorage.getItem('calculation') || '';
+
+      showCalculation();
 
       function updateCalculation(value) {
         calculation += value;  
-        console.log(calculation);
-        localStorage.setItem('calculation', JSON.stringify(calculation));b
+        
+        showCalculation();
+
+        localStorage.setItem('calculation', calculation);
       }
 
-      
+      function showCalculation(){
+        const result = document.querySelector('.js-calculation');
+        result.innerHTML = calculation 
+      }
+    
     </script>
   </body>
 </html>
