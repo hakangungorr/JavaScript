@@ -1,62 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RPS UPDATED</title>
-  <link rel="stylesheet" href="rps.css"> 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
-
-
-
-
-  <h1 class = "name">Rock Paper Scissors</h1>
-
-  <button onclick="playgame('rock');"><i class="fa-solid fa-hand-back-fist fa-beat"></i></button>
-  <button onclick="playgame('paper'); "><i class="fa-solid fa-hand fa-beat"></i></i></button>
-  <button  onclick="playgame('scissors');"><i class="fa-solid fa-scissors fa-beat"></i></button>
-
-
-  <p class = "js-result"></p>
-  <p class="js-moves"></p>
-  <p class="js-score"></p>
-
-  
-  <button class= "reset-button" onclick ="
-      
-      score.wins =0;
-      score.losses = 0;
-      score.tie = 0;
-      localStorage.removeItem('score');
-      updateScoreElement();
-      console.log(score);
-    
-      document.querySelector('.js-moves').innerHTML='';
-      document.querySelector('.js-result').innerHTML='';
-
-
-      
-
-
-        
-        
-
-      
-
-      
-
-      
-      
-    
-    
-  alert('All reseted')
-  ">Reset Score</button>
-
-
-  <script>
-    let  score= JSON.parse(localStorage.getItem('score'));
+let  score= JSON.parse(localStorage.getItem('score'));
     
      
     
@@ -168,9 +110,3 @@
    return computerMove;
     
 }
-
-
-  </script>
-  
-</body>
-</html>

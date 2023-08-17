@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="dom-project.css">
   <title>Dom Project</title>
 </head>
 <body>
 
   <p>Youtube Subscribe Button</p>
-  <button class= "Js-subs"onclick="
+  <button class= "Js-subs subs-button"onclick="
   subscribe();
 
 
@@ -18,9 +19,9 @@
   <p>Amazon Shipping Calculator</p>
   <p>Orders under $40= +$10 shipping. </p>
   <p>Orders over $40 = Free shipping</p>
-  <input class="cost" placeholder="Cost of order" onkeydown="
+  <input class="cost cost-input" placeholder="Cost of order"  onkeydown="
 handleCostKeydown(event)">
-  <button  class="calculationButtom", onclick="
+  <button  class="calculate-button ", onclick="
   costResult();  
   
   
@@ -46,9 +47,10 @@ handleCostKeydown(event)">
 
   if (buttonElement.innerText === 'Subscribe'){    /* .innerText sadece buttondaki texte odaklanır */
     buttonElement.innerHTML = 'Subscribed';
-
+    buttonElement.classList.add('is-subscribed');
   }else{
     buttonElement.innerHTML = 'Subscribe';
+    buttonElement.classList.remove('is-subscribed');
   }
 
     }
