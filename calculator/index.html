@@ -183,6 +183,7 @@
 
         if (/[0-9+\-*/.]/.test(key)) {
           updateCalculation(key);
+          console.log(key)
         }
         if (key === '=' || key === 'Enter') {
           calculation = eval(calculation);

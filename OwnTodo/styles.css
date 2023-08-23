@@ -25,11 +25,12 @@
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  
 }
 
 .input-todo-grid{
   
-  background-color: #edeef0;
+  background-color: white;
   border-radius: 30px;
   margin-bottom: 25px;
 }
@@ -71,4 +72,9 @@ input{
   padding: 20px 10px;
   cursor: pointer;
   border-radius: 10px;
+}
+
+.name{
+  margin:auto
+  
 }

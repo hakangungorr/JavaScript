@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ToDo</title>
 </head>
-<body>
+<body onkeydown="pressEnter(event);">
   <div class="container">
     <div class="todo-app">
       <h2>ToDo List</h2>
       <div class="input-todo-grid">
-        <input class= "js-name-input name-input" type="text" placeholder="Add to list">
-        <button class="add-todo-button" onclick="addTodo()">Add</button>
+        <input class= "js-name-input name-input" type="text" placeholder="Add to list" maxlength="20">
+        <button class="add-todo-button" onclick="addTodo()"    >Add</button>
       </div>
       <div class="js-todolist todo-grid"></div>
     </div>
