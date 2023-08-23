@@ -37,9 +37,12 @@
 input{
   border:none;
   outline: none;
-  background: transparent;
+  background:wheat;
   padding: 10px;
   font-weight:bold;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  color: black
 }
 
 .add-todo-button{
