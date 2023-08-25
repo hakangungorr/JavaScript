@@ -38,7 +38,7 @@
 input{
   border:none;
   outline: none;
-  background:wheat;
+  background:#b3b3b3;
   padding: 10px;
   font-weight:bold;
   margin-bottom: 10px;
@@ -56,7 +56,7 @@ input{
   border-radius: 10px;
 }
 
-.todo-grid,
+
 .input-todo-grid{
   display: grid;
   row-gap: 10px;
@@ -72,9 +72,30 @@ input{
   padding: 20px 10px;
   cursor: pointer;
   border-radius: 10px;
-}
-
-.name{
-  margin:auto
   
 }
+
+
+
+.todo-flex{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  
+
+}
+.todo-item{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: auto;
+}
+
+.name,.date{
+  flex:1;
+  
+}
+
+
+

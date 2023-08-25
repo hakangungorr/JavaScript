@@ -6,21 +6,27 @@ const todoList = JSON.parse(localStorage.getItem('todoList'))|| []
 
 function pressEnter(event) {
   const key =  event.key
-  if (key === 'Enter' || key === '=') 
+  if (key === 'Enter' ) 
   addTodo();
 
 }
 
 
 function addTodo(){
-  
+  const dateElement= document.querySelector('.js-due-date-input');
   const nameElement= document.querySelector('.js-name-input');
   const name = nameElement.value;
+  const date = dateElement.value;
+  
 
-  if(name !=''){
-    todoList.push(name);
- 
+  if(name !='' && date != ''){
+    const todoObject = {
+      name: name,
+      date: date
+    };
+    todoList.push(todoObject);
     nameElement.value='';
+    dateElement.value='';
     renderTodoList();
     saveToStorage()
   
@@ -28,23 +34,28 @@ function addTodo(){
   }
 
 function renderTodoList() {
-  todoListHtml = '';
+  let todoListHtml = '';
 
-  for (let i=0; i<todoList.length; i++) {
-    const name = todoList[i];
-    const html = `<div class="name">${name}</div>
+  todoList.forEach(function(todoObject,index){
+    const name = todoObject.name;
+    const date = todoObject.date;
+
+    
+    const html = `<div class="todo-item"><p class="name">${name}</p>
+    <p class="date">${date}</p>
     <button onclick="
-    todoList.splice(${i},1)
+    todoList.splice(${index},1);
     renderTodoList();
     saveToStorage();
     " class="delete-todo-button" 
-    >Delete</button>
-    `
-    todoListHtml += html
-    
+    >Delete</button></div>
+    `;
+    todoListHtml += html;
+  })
+
+  document.querySelector('.js-todolist').innerHTML = todoListHtml
 }
-document.querySelector('.js-todolist').innerHTML = todoListHtml
-}
+
 
 
 
