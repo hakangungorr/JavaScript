@@ -6,7 +6,29 @@
   <title>Advanced function</title>
 </head>
 <body>
+  <button class="js-button">Click</button>
+
   <script>
+    /* const buttonElement = document.querySelector('.js-button');
+
+    const eventlistener = ()=>{
+      console.log('click');
+    }
+    //we have to write function and use on addeventlistener or removeeventlistener 
+    buttonElement.addEventListener('click', eventlistener)
+
+    buttonElement.removeEventListener('click', eventlistener)
+    
+    
+
+    //multiple things done with Only one eventlistener 
+
+    buttonElement.addEventListener('click', ()=>{
+      console.log('click2')
+    }) */
+
+
+
     /* function greeting(){
       console.log('Hello')
     }
@@ -47,23 +69,91 @@
       
       
     
-       /* etInterval(function(){
+       /* setInterval(function(){
         console.log('interval') //async code but keep running a function in the future 
       },1000);
 
       console.log('nextline 2');
  */
 
-    [
+    /*  [
       'make dinner',
       'wash dishes',
       'watch youtube'
-    ].forEach(function (value,index){
+    ].forEach( (value,index) => {
+      if (value ==='wash dishes'){
+        return;
+
+      }
       console.log(value);
       console.log(index);
-    });
+    }); 
 
-    </script>
+
+    const regularFunction = function(){
+      console.log('Hello')
+      return 5;
+    }
+
+    const arrowFunction = () => {    //Differences is that arrow function has few shortcuts
+      console.log('Hello')          
+      return 5;
+    }
+
+
+    const oneParam = (param) =>{
+      console.log(param+1)
+    }
+    oneParam(2);
+//top and bottom are same function 
+    const otherParam = param =>{
+      console.log(param+1)
+    }
+    otherParam(2);
+
+    const oneline = () => 2+3;  //It is same also dont neet curly brackets
+
+    console.log(oneline());
+
+
+    const object2 = {
+     method: () => {  //In object it is not prefered to create function like this  
+
+      }
+
+      method(){   // In Object it is better than upper
+
+      }
+
+    } */
+       
+
+
+/* 1,-3,5].filter((value,index)=>{
+  if (value >=0){
+    return true;
+
+  }else{
+    return false;   //if it is false,array will be empty
+  }// only doing like return >= same 
+}) */
+
+
+[1, 1, 3].map((value,index) => {
+  return value*2
+})
+
+
+console.log([1,1,3].map(value=> value*2))    // sama as above
+
+
+
+
+
+
+ 
+ 
+ </script>
 
   
 </body>

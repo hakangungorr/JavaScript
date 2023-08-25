@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App</title>
+  </head>
+  <body>
+    <button class="btn" onclick=" changeNow();">Finish</button>
+    <button class="addToCart" onclick="addToCart();">Add to cart</button>
+    <div class="container"></div>
+    <button
+      onclick="messages ++;
+  displayNotifications();">
+      Add
+    </button>
+    <button
+      onclick="
+  if (messages > 1 ){
+    messages --
+  }else if (messages <= 1){
+    stopNotifications();
+  }
+  
+  ">
+      Remove
+    </button>
+    <script>
+            /* const add = function(){
+        console.log(2+3)
+      }
+      add();
+      const fun= function(){
+        console.log('12b')
+
+      }
+      function runtwice(param){
+        param();
+
+      };
+      runtwice(fun);
+      runtwice(ad); */
+
+            /* function changeNow(){
+      document.querySelector('.btn').innerHTML = 'Loading...'
+
+      setTimeout(function(){document.querySelector('.btn').innerHTML='Finished!';}
+      ,1000);
+      }
+
+       */
+
+            /*
+      let x = ''
+
+      function addToCart(){
+      const infoChanges = document.querySelector('.container')
+        infoChanges.innerHTML= 'Added';
+        clearTimeout(x)
+
+        console.log(x)
+        x=setTimeout(function(){
+        document.querySelector('.container').innerHTML= '';
+      },2000)
+      console.log(x)
+      } */
+            let messages = 2;
+
+            let intervalId;
+
+            let isDisplaying;
+
+            function displayNotifications() {
+              if (isDisplaying) {
+                return;
+              }
+
+              isDisplaying = true;
+
+               intervalId=setInterval(function(){
+                if(document.title==='App'){
+                  document.title=`${messages} message`;
+
+                }else {
+                  document.title= 'App'
+                }},1000)
+
+            }
+
+            function stopNotifications(){
+              isDisplayig = false;
+              clearInterval(intervalId);
+              document.title='App'
+
+            }
+
+    </script>
+  </body>
+</html>
