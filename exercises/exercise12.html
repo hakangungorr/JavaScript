@@ -26,73 +26,134 @@
       Remove
     </button>
     <script>
-            /* const add = function(){
-        console.log(2+3)
-      }
-      add();
-      const fun= function(){
-        console.log('12b')
+      /* const add = function(){
+              console.log(2+3)
+            }
+            add();
+            const fun= function(){
+              console.log('12b')
 
-      }
-      function runtwice(param){
-        param();
+            }
+            function runtwice(param){
+              param();
 
-      };
-      runtwice(fun);
-      runtwice(ad); */
+            };
+            runtwice(fun);
+            runtwice(ad); */
 
-            /* function changeNow(){
-      document.querySelector('.btn').innerHTML = 'Loading...'
+     /*  function changeNow(){
+            document.querySelector('.btn').innerHTML = 'Loading...'
 
-      setTimeout(function(){document.querySelector('.btn').innerHTML='Finished!';}
-      ,1000);
-      }
+            setTimeout(()=>{document.querySelector('.btn').innerHTML='Finished!';}
+            ,1000);
+            } */
 
+             
+
+      /*
+            let x = ''
+
+            function addToCart(){
+            const infoChanges = document.querySelector('.container')
+              infoChanges.innerHTML= 'Added';
+              clearTimeout(x)
+
+              console.log(x)
+              x=setTimeout(function(){
+              document.querySelector('.container').innerHTML= '';
+            },2000)
+            console.log(x)
+            } */
+      /*
+                  let messages = 2;
+
+                  let intervalId;
+
+                  let isDisplaying;
+
+                  function displayNotifications() {
+                    if (isDisplaying) {
+                      return;
+                    }
+
+                    isDisplaying = true;
+
+                     intervalId=setInterval(function(){
+                      if(document.title==='App'){
+                        document.title=`${messages} message`;
+
+                      }else {
+                        document.title= 'App'
+                      }},1000)
+
+                  }
+
+                  function stopNotifications(){
+                    isDisplayig = false;
+                    clearInterval(intervalId);
+                    document.title='App'
+
+                  }
        */
 
-            /*
-      let x = ''
+      /*const multiply = (a,b) =>  a*b  */
+      /*  const multiply = (a,b) => {
+                  return a*b
+                } */
 
-      function addToCart(){
-      const infoChanges = document.querySelector('.container')
-        infoChanges.innerHTML= 'Added';
-        clearTimeout(x)
+      /*
+                console.log(multiply(2,3))
+                console.log(multiply(7.,10))
 
-        console.log(x)
-        x=setTimeout(function(){
-        document.querySelector('.container').innerHTML= '';
-      },2000)
-      console.log(x)
-      } */
-            let messages = 2;
+                function countPositive(nums){
+                  let positiveNumber = 0
 
-            let intervalId;
+                  nums.forEach((num)=>{
+                    if (num > 0){
+                      positiveNumber ++}
+                    })
+                    return positiveNumber;
+                  }
 
-            let isDisplaying;
+                  console.log(countPositive([1, -3, 5]))
 
-            function displayNotifications() {
-              if (isDisplaying) {
-                return;
-              }
 
-              isDisplaying = true;
 
-               intervalId=setInterval(function(){
-                if(document.title==='App'){
-                  document.title=`${messages} message`;
+                  */
 
-                }else {
-                  document.title= 'App'
-                }},1000)
+      /* function addNum(array,num){
+                    return array.map((value)=> value+num)
+                    }
+                    console.log(addNum([1,2,3],2))
+*/
+     /*  let countEgg = 0
+      function removeEgg(foods) {
+        return foods.filter(function (food){
+          if(food==='egg'){
+            countEgg ++
+            if(countEgg >= 3){
+              return true}
+            return false
+          }else{
+            return true
+          }
+        }
+        )}
+        console.log(removeEgg(['egg','x','y','egg','z','egg','egg'])); */
 
-            }
+        function removeEgg(foods) {
+          let eggsRemoved= 0;
 
-            function stopNotifications(){
-              isDisplayig = false;
-              clearInterval(intervalId);
-              document.title='App'
+          return foods.filter((food) =>{
+            if (food==='egg' && eggsRemoved<2){
+              eggsRemoved ++
+              return false
+          }
+          return true
+        })}
 
-            }
+        console.log(removeEgg(['egg','x','y','egg','z','egg','egg']));
+
 
     </script>
   </body>
